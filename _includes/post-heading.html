@@ -1,0 +1,15 @@
+{% if include.post_page %}
+	{% if page.recipe.ingredients_markdown or page.recipe.directions_markdown %}
+	<div class="take-me">
+		<a class="button" href="#recipe">К рецепту</a>
+	</div>
+	{% endif %}
+{% endif %}
+<h1>
+	<a href="{{ include.post.url }}">
+		{{ include.post.title }}
+	</a>
+</h1>
+<time datetime="{{ include.post.date | date_to_xmlschema }}">
+	{{ include.post.date | date: "%B %-d, %Y" }}
+</time>

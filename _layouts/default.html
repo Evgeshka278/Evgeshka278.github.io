@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html lang="{{ site.lang | default: "en-US" }}">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		{% seo %}
+		{% feed_meta %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
+
+		<link rel="stylesheet" media="screen" href="{{ site.baseurl }}assets/css/screen.css">
+		{% if page.print_stylesheet %}
+			<link rel="stylesheet" media="print" href="{{ site.baseurl }}assets/css/print.css">
+		{% endif %}
+		<link rel="icon" type="image/png" href="{{ site.baseurl }}assets/images/favicon.png">
+
+	</head>
+	<body>
+		{% include navigation.html %}
+		<header>
+			<a href="{{ "/" | relative_url }}">
+				<img src="{{ site.baseurl }}{{ site.data.company_details.logo_image }}" width="180" alt="logo">
+			</a>
+		</header>
+
+		<div class="container main-content">
+			<section class="content">{{ content }}</section>
+			{% include sidebar.html %}
+		</div>
+		<footer>
+			<div class="container">
+				<hr>
+				&copy; {{ site.title }} {{ site.time | date: "%Y" }}.
+			</div>
+		</footer>
+	</body>
+</html>
