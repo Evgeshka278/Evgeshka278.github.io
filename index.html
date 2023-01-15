@@ -1,0 +1,32 @@
+---
+title: Домашняя
+---
+<section class="posts">
+	{% for post in paginator.posts %}
+		<article class="post">
+			{% include post-heading.html post=post %}
+			<div class="image">
+				<img src="{{ post.featured_image }}" alt="{{ post.title }}">
+			</div>
+
+			{{ post.excerpt }}
+
+			<p><a class="button" href="{{ post.url | relative_url }}">Читать дальше</a></p>
+		</article>
+	{% endfor %}
+
+	{% if paginator.total_pages > 1 %}
+		<div class="pagination">
+			{% if paginator.previous_page %}
+				<a href="{{ paginator.previous_page_path | relative_url }}" class="previous btn">&larr; Сюда</a>
+			{% endif %}
+
+			<span class="page_number ">{{ paginator.page }} из {{ paginator.total_pages }}</span>
+
+			{% if paginator.next_page %}
+				<a href="{{ paginator.next_page_path | relative_url }}" class="next btn">Туда &rarr;</a>
+			{% endif %}
+		</div>
+	{% endif %}
+</section>
+
