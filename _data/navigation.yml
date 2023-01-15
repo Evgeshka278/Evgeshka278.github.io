@@ -1,8 +1,8 @@
 - name: Домашняя
   link: /
 - name: Обо мне
-  link: /about/
+  link: /about
 - name: Рецепты
-  link: /recipes/
+  link: /recipes
 - name: Советы
-  link: /advices/
+  link: /advices
