@@ -1,6 +1,6 @@
 - name: Домашняя
   link: /
-- name: Обо мне
+- name: Обо&nbsp;мне
   link: /about
 - name: Рецепты
   link: /recipes
